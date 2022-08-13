@@ -9,7 +9,9 @@ const LS_Key = 'contacts_hook';
 
 export default function App() {
   const [contacts, setContacts] = useState(
-    JSON.parse(window.localStorage.getItem(LS_Key) ?? [])
+    JSON.parse(window.localStorage.getItem(LS_Key))
+      ? JSON.parse(window.localStorage.getItem(LS_Key))
+      : []
   );
   const [filter, setFilter] = useState('');
 
